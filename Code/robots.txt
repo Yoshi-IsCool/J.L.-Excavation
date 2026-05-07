@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /spec_unpacked/
+Disallow: /spec.txt
+
+Sitemap: https://jlexcavationllc.com/sitemap.xml

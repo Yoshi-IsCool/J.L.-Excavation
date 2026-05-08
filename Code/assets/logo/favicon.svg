@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="fav-flame" cx="40%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FBB034"/>
+      <stop offset="40%" stop-color="#F47C2A"/>
+      <stop offset="80%" stop-color="#E63E1E"/>
+      <stop offset="100%" stop-color="#C71B1F"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="8" fill="#1A1A1A"/>
+  <path d="M 54 32
+           C 54 18, 44 8, 32 8
+           C 18 8, 8 19, 8 32
+           C 8 45, 18 56, 32 56
+           C 42 56, 50 51, 53 43
+           C 47 50, 38 51, 30 46
+           C 22 41, 21 32, 26 26
+           C 32 19, 42 21, 46 27"
+        fill="url(#fav-flame)"/>
+  <text x="34" y="44" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-style="italic" font-size="30" fill="#1A1A1A" letter-spacing="-1">JL</text>
+</svg>

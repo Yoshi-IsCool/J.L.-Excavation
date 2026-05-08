@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ===== ENGLISH ===== -->
+  <url>
+    <loc>https://jlearthworks.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jlearthworks.com/" />
+    <changefreq>weekly</changefreq><priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/about.html" />
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/services.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/services.html" />
+    <changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/services/site-development.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/services/site-development.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/services/site-development.html" />
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/services/underground-utilities.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/services/underground-utilities.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/services/underground-utilities.html" />
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/services/sewer-and-water.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/services/sewer-and-water.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/services/sewer-and-water.html" />
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/services/gps-design.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/services/gps-design.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/services/gps-design.html" />
+    <changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/capabilities.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/capabilities.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/capabilities.html" />
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/projects.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/projects.html" />
+    <changefreq>weekly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/safety.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/safety.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/safety.html" />
+    <changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/service-area.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/service-area.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/service-area.html" />
+    <changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/faq.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/faq.html" />
+    <changefreq>monthly</changefreq><priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/contact.html" />
+    <changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jlearthworks.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jlearthworks.com/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://jlearthworks.com/es/privacy.html" />
+    <changefreq>yearly</changefreq><priority>0.2</priority>
+  </url>
+
+  <!-- ===== ESPAÑOL (es-MX) ===== -->
+  <url><loc>https://jlearthworks.com/es/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://jlearthworks.com/es/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jlearthworks.com/es/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jlearthworks.com/es/services/site-development.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jlearthworks.com/es/services/underground-utilities.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jlearthworks.com/es/services/sewer-and-water.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jlearthworks.com/es/services/gps-design.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jlearthworks.com/es/capabilities.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jlearthworks.com/es/projects.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jlearthworks.com/es/safety.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jlearthworks.com/es/service-area.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jlearthworks.com/es/faq.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://jlearthworks.com/es/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://jlearthworks.com/es/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+</urlset>

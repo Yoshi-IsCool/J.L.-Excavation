@@ -1,0 +1,13 @@
+{
+  "name": "JL Earthworks & Design LLC",
+  "short_name": "JL Earthworks",
+  "description": "Family-operated earthwork, utility, and GPS modeling contractor serving the Tulsa area and Northeastern Oklahoma.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1A1A",
+  "theme_color": "#1A1A1A",
+  "icons": [
+    { "src": "/assets/logo/favicon.png", "sizes": "any", "type": "image/png" },
+    { "src": "/assets/logo/apple-touch-icon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

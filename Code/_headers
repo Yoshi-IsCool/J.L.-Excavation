@@ -1,0 +1,40 @@
+/*
+  # ---- HTTPS / transport security ----
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # ---- Anti-framing / clickjacking ----
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://*.netlify.app; object-src 'none'; upgrade-insecure-requests
+
+  # ---- MIME sniffing protection ----
+  X-Content-Type-Options: nosniff
+
+  # ---- Referrer policy ----
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # ---- Permissions policy (disable unneeded browser features) ----
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), fullscreen=(self), interest-cohort=()
+
+  # ---- XSS protection (legacy header, harmless) ----
+  X-XSS-Protection: 1; mode=block
+
+  # ---- Cross-origin policies ----
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-site
+
+# ---- Long-cache static assets ----
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ---- HTML: short cache, must revalidate ----
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

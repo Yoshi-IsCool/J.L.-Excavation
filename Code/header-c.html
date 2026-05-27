@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Header Prototype C — JL Earthworks &amp; Design</title>
+  <link rel="icon" href="/assets/logo/favicon.ico" sizes="any" />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    /* === Header C: Centered, stacked logo over thin nav bar === */
+    .proto-c .site-header { background: var(--white); }
+    .proto-c .bar-top {
+      padding: 24px var(--gutter) 14px;
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+    }
+    .proto-c .bar-top .corner-info {
+      font-family: var(--font-body); font-size: 12px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--steel); font-weight: 600;
+    }
+    .proto-c .bar-top .corner-info.right { text-align: right; }
+    .proto-c .logo-wrap {
+      justify-self: center;
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+    }
+    .proto-c .logo-wrap img { height: 112px; width: auto; }
+    .proto-c .bar-bottom {
+      background: var(--ink); color: var(--white);
+      border-top: 4px solid var(--yellow);
+    }
+    .proto-c .nav { padding: 0 var(--gutter); }
+    .proto-c .nav ul {
+      display: flex; gap: 0; justify-content: center; list-style: none;
+      padding: 0; margin: 0;
+    }
+    .proto-c .nav li { flex: 1; max-width: 180px; text-align: center; }
+    .proto-c .nav a {
+      display: block; padding: 16px 8px;
+      font-family: var(--font-body); font-size: 12px; font-weight: 700;
+      color: var(--white); text-transform: uppercase; letter-spacing: 0.12em;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .proto-c .nav li:first-child a { border-left: 1px solid rgba(255,255,255,0.08); }
+    .proto-c .nav a:hover, .proto-c .nav a.active { background: var(--yellow); color: var(--ink); }
+    @media (max-width: 960px) {
+      .proto-c .bar-top { grid-template-columns: 1fr auto 1fr; padding: 14px var(--gutter); }
+      .proto-c .bar-top .corner-info { display: none; }
+      .proto-c .logo-wrap img { height: 60px; }
+      .proto-c .nav ul { flex-wrap: wrap; }
+    }
+
+    .proto-banner {
+      background: var(--yellow); color: var(--ink);
+      padding: 14px 24px; text-align: center;
+      font-family: var(--font-display); font-size: 14px; letter-spacing: 0.12em;
+      text-transform: uppercase; font-weight: 700;
+    }
+    .proto-banner a { text-decoration: underline; margin: 0 12px; color: var(--ink); }
+    .proto-banner a.active { background: var(--ink); color: var(--yellow); padding: 4px 12px; border-radius: 4px; text-decoration: none; }
+  </style>
+</head>
+<body class="proto-c">
+  <div class="proto-banner">
+    Prototype C · Centered · Stacked · Thin Nav Bar ·
+    <a href="/header-a.html">A</a>
+    <a href="/header-b.html">B</a>
+    <a href="/header-c.html" class="active">C</a>
+    <a href="/">Back to live site</a>
+  </div>
+
+  <header class="site-header">
+    <div class="bar-top">
+      <div class="corner-info">Glenpool, Oklahoma</div>
+      <a class="logo-wrap" href="/">
+        <img src="/assets/logo/logo-client.png" alt="JL Earthworks &amp; Design LLC" />
+      </a>
+      <div class="corner-info right">
+        <a href="tel:+19187711710" style="color:var(--ink); font-weight:800; font-size:15px; letter-spacing:0.06em;">(918) 771-1710</a>
+      </div>
+    </div>
+    <div class="bar-bottom">
+      <div class="nav">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/safety.html">Safety</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" data-bg="home">
+      <div class="bg-layer"></div>
+      <div class="container">
+        <h1 class="hero-motto"><span class="line">Built on Integrity,</span><br/><span class="line">Building with Excellence.</span></h1>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/contact.html">Request Consultation <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-outline-light" href="/projects.html">View Our Work</a>
+        </div>
+      </div>
+    </section>
+    <section class="tight">
+      <div class="container container-narrow center">
+        <h2>Header Prototype C</h2>
+        <p>Centered &amp; symmetric. The logo sits dead-center with location on the left and phone on the right. A dark, edge-to-edge nav bar runs below, with a yellow accent stripe separating the two. Tabs highlight yellow on hover and stay highlighted on the active page.</p>
+        <p><strong>Best for:</strong> A balanced, more traditional corporate look — like the headers many established contractors and architecture firms use.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

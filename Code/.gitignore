@@ -1,0 +1,30 @@
+# Word / Office lockfiles (created when a doc is open)
+~$*
+*.tmp
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+
+# Internal client docs — keep on your machine, off the live site
+JL_Excavation_Client_Review.docx
+JL_Excavation_Website_Build_Spec.docx
+
+# Build artifacts (in case any local tooling drops these)
+node_modules/
+_clientdoc/
+_*.py
+
+# Logs
+*.log
+
+# Env
+.env
+.env.local

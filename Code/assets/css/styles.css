@@ -169,8 +169,12 @@ p { margin: 0 0 1em; }
 }
 .eyebrow.no-rule { padding-left: 0; }
 .eyebrow.no-rule::before { display: none; }
-/* On dark backgrounds (hero, dark-cta, footer), use yellow text which hits 8.59:1 on ink — passes AA. */
-.hero .eyebrow,
+/* On dark backgrounds, eyebrow text is WHITE for maximum readability over photos.
+   The yellow accent is reserved for the small rule only. Footer keeps yellow eyebrow on solid ink. */
+.hero .eyebrow {
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 0 4px rgba(0,0,0,0.5);
+}
 .bg-ink .eyebrow,
 .dark-cta .eyebrow,
 .site-footer .eyebrow { color: var(--yellow); }
@@ -1037,6 +1041,91 @@ ul.checks.light li { color: var(--white); }
 }
 @media (max-width: 760px) {
   .reach-out-band { padding: 24px; justify-content: center; text-align: center; }
+}
+
+/* ---------- Services deck (home page — impactful card grid) ---------- */
+.services-deck {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+.service-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  grid-column: span 2;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+}
+.service-tile.tile-feature {
+  grid-column: span 3;
+}
+.service-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(26,26,26,0.14);
+  border-color: transparent;
+}
+.service-tile .tile-photo {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: var(--ink);
+}
+.service-tile.tile-feature .tile-photo { aspect-ratio: 16/9; }
+.service-tile .tile-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s var(--ease);
+}
+.service-tile:hover .tile-photo img { transform: scale(1.06); }
+.service-tile .tile-body {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  position: relative;
+}
+.service-tile .tile-num {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--amber-text);
+  text-transform: uppercase;
+}
+.service-tile h3 {
+  font-size: clamp(22px, 1.9vw, 28px);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+.service-tile p {
+  color: var(--steel);
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.service-tile .tile-more {
+  margin-top: auto;
+  padding-top: 14px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-tile:hover .tile-more { color: var(--amber-text); }
+@media (max-width: 960px) {
+  .services-deck { grid-template-columns: 1fr; gap: 16px; }
+  .service-tile, .service-tile.tile-feature { grid-column: span 1; }
 }
 
 /* ---------- Contact grid (form + sidebar) ---------- */

@@ -501,9 +501,10 @@ section.snug { padding: var(--section-pad-sm) 0; }
 @media (max-width: 760px) { .stat-strip { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 28px 18px; } }
 
 /* ---------- 12. Service cards ---------- */
-.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-@media (max-width: 960px) { .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
-@media (max-width: 600px) { .svc-grid { grid-template-columns: 1fr; } }
+.svc-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+.svc-grid > * { flex: 1 1 calc(33.333% - 16px); min-width: 280px; }
+@media (max-width: 960px) { .svc-grid { gap: 16px; } .svc-grid > * { flex-basis: calc(50% - 8px); } }
+@media (max-width: 600px) { .svc-grid > * { flex-basis: 100%; min-width: 0; } }
 
 .svc-card {
   background: var(--white); border-radius: var(--radius-card); padding: 28px;
@@ -581,9 +582,10 @@ section.snug { padding: var(--section-pad-sm) 0; }
 .t-card .who .role { color: var(--steel); font-size: 13px; }
 
 /* ---------- 15. Project cards ---------- */
-.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-@media (max-width: 960px) { .proj-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
-@media (max-width: 600px) { .proj-grid { grid-template-columns: 1fr; } }
+.proj-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+.proj-grid > * { flex: 0 1 calc(33.333% - 13px); min-width: 280px; }
+@media (max-width: 960px) { .proj-grid { gap: 14px; } .proj-grid > * { flex-basis: calc(50% - 8px); } }
+@media (max-width: 600px) { .proj-grid > * { flex-basis: 100%; min-width: 0; } }
 
 .proj-card {
   position: relative; border-radius: var(--radius-card); overflow: hidden;
@@ -627,8 +629,10 @@ section.snug { padding: var(--section-pad-sm) 0; }
 .case-meta dd { margin: 0 0 14px; font-size: 15px; }
 
 /* ---------- 16. Process strip ---------- */
-.process { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: pstep; }
-@media (max-width: 960px) { .process { grid-template-columns: 1fr; } }
+.process { display: flex; flex-wrap: wrap; gap: 20px; counter-reset: pstep; }
+.process > * { flex: 1 1 calc(25% - 15px); min-width: 200px; }
+@media (max-width: 960px) { .process > * { flex-basis: calc(50% - 10px); } }
+@media (max-width: 600px) { .process > * { flex-basis: 100%; min-width: 0; } }
 .proc-step {
   position: relative; padding: 28px 22px; background: var(--white); border: 1px solid var(--steel-soft); border-radius: var(--radius-card);
   display: flex; flex-direction: column; gap: 10px;
@@ -1045,9 +1049,13 @@ ul.checks.light li { color: var(--white); }
 
 /* ---------- Services 3-column grid (home page — clean corporate) ---------- */
 .svc-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 22px;
+}
+.svc-grid-3 > .svc-cell {
+  flex: 1 1 calc(33.333% - 15px);
+  min-width: 280px;
 }
 .svc-cell {
   display: flex;
@@ -1067,7 +1075,7 @@ ul.checks.light li { color: var(--white); }
 }
 .svc-cell-photo {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 200px;
   overflow: hidden;
   background: var(--ink);
 }
@@ -1118,10 +1126,12 @@ ul.checks.light li { color: var(--white); }
 }
 .svc-cell:hover .svc-cell-more { color: var(--amber-text); }
 @media (max-width: 960px) {
-  .svc-grid-3 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .svc-grid-3 { gap: 16px; }
+  .svc-grid-3 > .svc-cell { flex-basis: calc(50% - 8px); }
 }
 @media (max-width: 600px) {
-  .svc-grid-3 { grid-template-columns: 1fr; gap: 14px; }
+  .svc-grid-3 { gap: 14px; }
+  .svc-grid-3 > .svc-cell { flex-basis: 100%; min-width: 0; }
 }
 
 /* ---------- Contact grid (form + sidebar) ---------- */

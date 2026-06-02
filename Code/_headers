@@ -22,18 +22,12 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-site
 
-# ---- Long-cache static assets ----
+# ---- Static assets: revalidate so updates always appear ----
+# Filenames are stable (NOT content-hashed), so do NOT use "immutable".
+# ETag revalidation returns 304 when unchanged (fast) and fresh bytes when a
+# file changes, so CSS / JS / image edits show up without a forced hard-refresh.
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/img/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/css/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/js/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=0, must-revalidate
 
 # ---- HTML: short cache, must revalidate ----
 /*.html

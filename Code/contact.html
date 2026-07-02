@@ -101,7 +101,7 @@
           <div class="reveal">
             <span class="eyebrow">Submit an Inquiry</span>
             <h2>Project, GPS, or career &mdash; submit your details below.</h2>
-            <form class="form" name="inquiry" method="POST" data-netlify="true" data-netlify-honeypot="company_url" netlify-honeypot="company_url" data-demo aria-label="Inquiry form">
+            <form class="form" id="inquiry" name="inquiry" method="POST" action="/thanks.html" data-netlify="true" data-netlify-honeypot="company_url" aria-label="Inquiry form">
               <!-- Netlify Forms compatibility -->
               <input type="hidden" name="form-name" value="inquiry" />
               <!-- Honeypot: real users won't fill this; bots will -->
@@ -143,7 +143,7 @@
                 </select>
               </div>
               <fieldset class="field" style="border:0;padding:0;margin:0;">
-                <legend style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-bottom:6px;padding:0;">How Would You Like to Be Contacted? <span class="req" aria-hidden="true">*</span><span class="sr">(required)</span></legend>
+                <legend id="contactMethodLegend" style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-bottom:6px;padding:0;">How Would You Like to Be Contacted? <span class="req" aria-hidden="true">*</span><span class="sr">(required)</span></legend>
                 <div class="radio-group" role="radiogroup" aria-labelledby="contactMethodLegend">
                   <label><input type="radio" name="contactMethod" value="email" required /> <span>Email</span></label>
                   <label><input type="radio" name="contactMethod" value="phone" /> <span>Phone Call</span></label>

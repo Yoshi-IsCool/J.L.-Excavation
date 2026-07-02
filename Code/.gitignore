@@ -13,9 +13,8 @@ desktop.ini
 .claude/
 *.swp
 
-# Internal client docs — keep on your machine, off the live site
-JL_Excavation_Client_Review.docx
-JL_Excavation_Website_Build_Spec.docx
+# Internal documents — keep on your machine, off the live site
+*.docx
 
 # Build artifacts (in case any local tooling drops these)
 node_modules/

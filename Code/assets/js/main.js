@@ -4,7 +4,7 @@
    - Stat counters (one-shot)
    - FAQ accordion
    - Project filtering
-   - Form submit demo state
+   - Form submit state (Netlify Forms)
    - Header shrink on scroll
 */
 (function () {
@@ -14,18 +14,22 @@
   const navToggle = document.querySelector('.nav-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   if (navToggle && mobileMenu) {
-    navToggle.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-    mobileMenu.querySelector('.close-btn')?.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    }));
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle('open', open);
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      navToggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.addEventListener('click', () => setMenu(true));
+    mobileMenu.querySelector('.close-btn')?.addEventListener('click', () => setMenu(false));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    // If the viewport grows past the mobile breakpoint while the menu is open,
+    // CSS hides the menu — release the page scroll lock too.
+    const desktopMq = window.matchMedia('(min-width: 961px)');
+    if (desktopMq.addEventListener) {
+      desktopMq.addEventListener('change', e => { if (e.matches) setMenu(false); });
+    }
   }
 
   // ---------- Scroll reveal ----------
@@ -140,27 +144,33 @@
     projectType.addEventListener('change', sync);
   }
 
-  // ---------- Form submit (demo) ----------
-  document.querySelectorAll('form[data-demo]').forEach(form => {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = form.querySelector('[type=submit]');
-      if (!btn) return;
-      const original = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<span class="dot-loader"></span> Sending…';
-      setTimeout(() => {
-        btn.innerHTML = '✓ Sent. We\'ll be in touch.';
-        btn.style.background = '#1A1A1A';
-        btn.style.color = '#F5A623';
-        setTimeout(() => {
-          form.reset();
-          btn.disabled = false;
-          btn.innerHTML = original;
-          btn.style.background = '';
-          btn.style.color = '';
-        }, 4000);
-      }, 800);
+  // ---------- Inquiry type preselect (e.g. /contact.html?type=employment#inquiry) ----------
+  const inquirySelect = document.querySelector('#inquiryType');
+  if (inquirySelect) {
+    const type = new URLSearchParams(window.location.search).get('type');
+    if (type && Array.from(inquirySelect.options).some(o => o.value === type)) {
+      inquirySelect.value = type;
+    }
+  }
+
+  // ---------- Form submit: disable button to prevent double-submission ----------
+  document.querySelectorAll('form[data-netlify]').forEach(form => {
+    const btn = form.querySelector('[type=submit]');
+    if (!btn) return;
+    const original = btn.innerHTML;
+    form.addEventListener('submit', () => {
+      // Defer the disable so the form data is serialized first in every browser
+      requestAnimationFrame(() => {
+        btn.disabled = true;
+        btn.innerHTML = '<span class="dot-loader" aria-hidden="true"></span> Sending…';
+      });
+    });
+    // Restore the button when the page is revived from the back/forward cache
+    window.addEventListener('pageshow', e => {
+      if (e.persisted) {
+        btn.disabled = false;
+        btn.innerHTML = original;
+      }
     });
   });
 

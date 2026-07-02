@@ -4,7 +4,7 @@
 
   # ---- Anti-framing / clickjacking ----
   X-Frame-Options: DENY
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://*.netlify.app; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
 
   # ---- MIME sniffing protection ----
   X-Content-Type-Options: nosniff
@@ -13,10 +13,10 @@
   Referrer-Policy: strict-origin-when-cross-origin
 
   # ---- Permissions policy (disable unneeded browser features) ----
-  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), fullscreen=(self), interest-cohort=()
+  Permissions-Policy: accelerometer=(), browsing-topics=(), camera=(), geolocation=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), payment=(), usb=(), fullscreen=(self)
 
-  # ---- XSS protection (legacy header, harmless) ----
-  X-XSS-Protection: 1; mode=block
+  # ---- XSS protection (legacy auditor explicitly disabled per OWASP; CSP is the real defense) ----
+  X-XSS-Protection: 0
 
   # ---- Cross-origin policies ----
   Cross-Origin-Opener-Policy: same-origin

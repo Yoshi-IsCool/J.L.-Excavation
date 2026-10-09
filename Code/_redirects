@@ -1,3 +1,4 @@
+/.gitignore   /404.html   404!
 # Force HTTPS + apex domain canonicalization handled by Netlify automatically.
 # Add hand-written redirects below as needed.
 

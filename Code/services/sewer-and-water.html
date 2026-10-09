@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://jlearthworks.com/services/sewer-and-water.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   
 </head>
@@ -69,11 +69,16 @@
     <nav>
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">&mdash; Site Development</a>
-      <a href="/services/underground-utilities.html">&mdash; Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">&mdash; Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">&mdash; GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>      <a href="/safety.html">Safety</a>
       <a href="/careers.html">Careers</a>
@@ -98,7 +103,7 @@
       <div class="container">
         <div class="split">
           <div class="img-frame reveal">
-            <img src="/assets/img/projects/lowville-waste-water-treatment-plant-2023/lowville-waste-water-treatment-plant-2023-gallery-1.jpg" alt="Sewer and water main work"/>
+            <img src="/assets/img/projects/lowville-waste-water-treatment-plant-2023/lowville-waste-water-treatment-plant-2023-feature.jpg" alt="Excavator loading out lagoon spoils on the new liner at the Lowville WWTP"/>
             <span class="badge">Lowville WWTP &middot; 2023</span>
           </div>
           <div class="body reveal">
@@ -129,17 +134,17 @@
         </div>
         <div class="proj-grid reveal-stagger">
           <a class="proj-card" href="/projects.html#lowville-wwtp">
-            <img src="/assets/img/projects/lowville-waste-water-treatment-plant-2023/lowville-waste-water-treatment-plant-2023-card.jpg" alt="Lowville WWTP" loading="lazy"/>
+            <img src="/assets/img/projects/lowville-waste-water-treatment-plant-2023/lowville-waste-water-treatment-plant-2023-gallery-3.jpg" alt="Lagoon piping along the liner edge at the Lowville WWTP" loading="lazy"/>
             <span class="tag">Treatment Plant</span>
             <div class="meta"><h4>Waste Water Treatment Plant</h4><div class="caption">Lowville, NY &middot; 2023</div><span class="underline">Case Study</span></div>
           </a>
-          <a class="proj-card" href="/projects.html#oklahoma-precast">
-            <img src="/assets/img/projects/oklahoma-company/oklahoma-company-card.jpg" alt="Waterline" loading="lazy"/>
+          <a class="proj-card" href="/projects.html">
+            <img src="/assets/img/projects/waterline-fort-drum-ny-2016/waterline-fort-drum-ny-2016-gallery-2.jpg" alt="Waterline trench excavation" loading="lazy"/>
             <span class="tag">Water Main</span>
-            <div class="meta"><h4>Precast Structure Installation</h4><div class="caption">Oklahoma &middot; 2024</div><span class="underline">Case Study</span></div>
+            <div class="meta"><h4>Waterline Replacement</h4><div class="caption">Fort Drum, NY &middot; 2016</div><span class="underline">Case Study</span></div>
           </a>
           <a class="proj-card" href="/projects.html#box-culvert">
-            <img src="/assets/img/projects/box-culvert-fort-drum-ny-2017/box-culvert-fort-drum-ny-2017-card.jpg" alt="Box Culvert" loading="lazy"/>
+            <img src="/assets/img/projects/box-culvert-fort-drum-ny-2017/box-culvert-fort-drum-ny-2017-setting.jpg" alt="Setting precast box culvert sections under survey control" loading="lazy"/>
             <span class="tag">Specialty</span>
             <div class="meta"><h4>Box Culvert Installation</h4><div class="caption">Fort Drum, NY &middot; 2017</div><span class="underline">Case Study</span></div>
           </a>
@@ -201,7 +206,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>

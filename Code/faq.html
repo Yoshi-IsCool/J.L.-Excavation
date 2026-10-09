@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://jlearthworks.com/faq.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   
 </head>
@@ -69,11 +69,16 @@
     <nav>
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">&mdash; Site Development</a>
-      <a href="/services/underground-utilities.html">&mdash; Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">&mdash; Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">&mdash; GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>      <a href="/safety.html">Safety</a>
       <a href="/careers.html">Careers</a>
@@ -89,7 +94,7 @@
       <div class="container reveal-stagger">
         <span class="eyebrow">FAQ</span>
         <h1>Common questions, straight answers.</h1>
-        <p class="lead">Don&rsquo;t see your question here? <a href="/contact.html" style="color:var(--yellow);">Send us a message</a> and we&rsquo;ll get back to you within one business day.</p>
+        <p class="lead">Don&rsquo;t see your question here? <a href="/contact.html" style="color:var(--yellow);">Send us a message</a> and we&rsquo;ll get back to you typically within one business day.</p>
         
       </div>
     </section>
@@ -120,10 +125,10 @@
         </div>
         <div class="faq-item">
           <button class="faq-q" type="button">
-            <span>Are you licensed, bonded, and insured?</span>
+            <span>Are you bonded and insured?</span>
             <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </button>
-          <div class="faq-a"><div class="inner">Yes. JL Earthworks &amp; Design LLC is fully insured and bonded, with USDOT #2039872. We carry general liability, workers&rsquo; comp, and project-specific bonding as needed.</div></div>
+          <div class="faq-a"><div class="inner">Yes. JL Earthworks &amp; Design LLC is fully insured and bonded, and operates under USDOT #2039872. We carry general liability, workers&rsquo; comp, and project-specific bonding as needed.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" type="button">
@@ -165,7 +170,7 @@
             <span>How can I send an inquiry?</span>
             <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </button>
-          <div class="faq-a"><div class="inner">The fastest way is the <a href="/contact.html" style="color:var(--yellow);">contact form</a>. Select your inquiry type (Project, GPS, Employment, or Other), tell us a bit about your project or question, and we&rsquo;ll get back to you within one business day. You can also call us at (918) 938-0608.</div></div>
+          <div class="faq-a"><div class="inner">The fastest way is the <a href="/contact.html" style="color:var(--yellow);">contact form</a>. Select your inquiry type (Project, GPS, Employment, or Other), tell us a bit about your project or question, and we&rsquo;ll get back to you typically within one business day. You can also call us at (918) 938-0608.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" type="button">
@@ -232,7 +237,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>

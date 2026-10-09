@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://jlearthworks.com/privacy.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
@@ -69,11 +69,16 @@
     <nav aria-label="Mobile menu">
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">&mdash; Site Development</a>
-      <a href="/services/underground-utilities.html">&mdash; Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">&mdash; Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">&mdash; GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>      <a href="/safety.html">Safety</a>
       <a href="/careers.html">Careers</a>
@@ -84,7 +89,7 @@
     </div>
   </div>
   <main id="main">
-    <section class="hero hero-page" data-bg="faq" aria-label="Page hero">
+    <section class="hero hero-page" data-bg="privacy" aria-label="Page hero">
       <div class="bg-layer" role="presentation"></div>
       <div class="container">
         <span class="eyebrow">Privacy</span>
@@ -96,7 +101,7 @@
       <div class="container container-narrow">
         <h2>1. Information We Collect</h2>
         <p>When you submit a form on this website &mdash; including the contact form, project inquiry, or employment inquiry &mdash; we collect the information you voluntarily provide. This typically includes your name, email address, phone number, company name, contact preferences, and the contents of your message.</p>
-        <p>This website does not use tracking cookies, advertising cookies, or third-party analytics for behavioral profiling. We may collect anonymous server log data (IP address, browser type, referring page, timestamp) for security and basic site-operation purposes. This data is not used to identify individual visitors.</p>
+        <p>We do not use advertising cookies or third-party analytics for behavioral profiling; see &ldquo;Third-Party Services&rdquo; below for the hosting and embedded-content providers this site relies on. We may collect anonymous server log data (IP address, browser type, referring page, timestamp) for security and basic site-operation purposes. This data is not used to identify individual visitors.</p>
 
         <h2>2. How We Use Your Information</h2>
         <p>Information you submit through this website is used solely to:</p>
@@ -119,7 +124,7 @@
         <p>Depending on the jurisdiction in which you reside, you may have the right to access, correct, or request deletion of personal information we hold about you. To exercise these rights, contact us at the address above.</p>
 
         <h2>7. Cookies</h2>
-        <p>This website does not set tracking cookies. Your browser may store standard session information for security purposes only. If we add functionality requiring cookies in the future, this policy will be updated and notice will be provided.</p>
+        <p>We do not set tracking or advertising cookies ourselves. Embedded third-party content &mdash; such as the Google Maps frame on our contact page &mdash; may set its own cookies, which are governed by that third party&rsquo;s privacy policy. If we add functionality requiring cookies in the future, this policy will be updated and notice will be provided.</p>
 
         <h2>8. Children&rsquo;s Privacy</h2>
         <p>This website is intended for business audiences and is not directed at children under 13. We do not knowingly collect personal information from children. If we learn we have inadvertently collected such information, we will delete it.</p>
@@ -188,7 +193,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>

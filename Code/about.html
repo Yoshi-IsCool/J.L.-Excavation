@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://jlearthworks.com/about.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   
 </head>
@@ -69,11 +69,16 @@
     <nav>
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">&mdash; Site Development</a>
-      <a href="/services/underground-utilities.html">&mdash; Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">&mdash; Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">&mdash; GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>      <a href="/safety.html">Safety</a>
       <a href="/careers.html">Careers</a>
@@ -98,8 +103,8 @@
       <div class="container">
         <div class="container-narrow center">
           <span class="eyebrow no-rule">Our Mission</span>
-          <blockquote class="mission-quote">
-            <p>&ldquo;Our mission is to deliver successful projects with integrity, precision, and a commitment to excellence. We strive to exceed expectations on every project while maintaining a safe working environment for our employees and supporting their families. These values have shaped the growth, quality, and reputation of our company for over a decade.&rdquo;</p>
+          <blockquote class="mission-quote reveal">
+            <p>Our mission is to deliver successful projects with integrity, precision, and a commitment to excellence. We strive to exceed expectations on every project while maintaining a safe working environment for our employees and supporting their families. These values have shaped the growth, quality, and reputation of our company for over a decade.</p>
             <cite>&mdash; JL Earthworks &amp; Design LLC</cite>
           </blockquote>
         </div>
@@ -110,12 +115,12 @@
       <div class="container">
         <div class="split">
           <div class="img-frame reveal">
-            <img src="/assets/img/projects/collinsville-5th-grade/collinsville-5th-grade-card.jpg" alt="Aerial of Collinsville 5th Grade Center civil sitework — Collinsville, OK" />
+            <img src="/assets/img/projects/collinsville-5th-grade/collinsville-5th-grade-gallery-3.jpg" alt="Crane and tilt-wall construction over finished pads at Collinsville 5th Grade Center" />
             <span class="badge">Collinsville, OK · 2026</span>
           </div>
           <div class="body reveal">
             <span class="eyebrow">About Us</span>
-            <h2>A measured expansion. A consistent standard.</h2>
+            <h2 class="mask-lines"><span class="line"><span class="line-inner">A measured expansion. A consistent standard.</span></span></h2>
             <p>JL Earthworks &amp; Design LLC is the next chapter of a family-owned business with deep industry roots. Predecessor JL Excavation LLC was founded in 2005 and incorporated in 2013 in northern New York, earning a strong reputation for safe, dependable earthwork and utility work &mdash; municipal water and sewer, commercial site development, and large-scale excavation.</p>
             <p>In 2024, the business was reestablished in Oklahoma as JL Earthworks &amp; Design LLC &mdash; heavy construction experience paired with in-house GPS machine-control modeling. Today the company delivers complete site preparation and utility construction for commercial and municipal projects.</p>
             <p>We install and connect critical utility systems &mdash; water mains, sanitary sewer, and stormwater drainage &mdash; to engineering standards and local regulations.</p>
@@ -290,7 +295,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>

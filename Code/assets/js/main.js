@@ -19,11 +19,23 @@
       mobileMenu.setAttribute('aria-hidden', String(!open));
       navToggle.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
+      if (!open) {
+        mobileMenu.querySelectorAll('.mm-group.open').forEach(g => g.classList.remove('open'));
+        mobileMenu.querySelectorAll('.mm-sub-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      }
     };
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.addEventListener('click', () => setMenu(true));
     mobileMenu.querySelector('.close-btn')?.addEventListener('click', () => setMenu(false));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    // Services accordion inside the mobile menu
+    mobileMenu.querySelectorAll('.mm-sub-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('.mm-group');
+        const open = group.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    });
     // If the viewport grows past the mobile breakpoint while the menu is open,
     // CSS hides the menu — release the page scroll lock too.
     const desktopMq = window.matchMedia('(min-width: 961px)');
@@ -33,7 +45,7 @@
   }
 
   // ---------- Scroll reveal ----------
-  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger, .mask-lines, .case-photos');
   if ('IntersectionObserver' in window && !reduced) {
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -234,13 +246,31 @@
     let last = 0;
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      if (y > 8) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+      if (y > 40) header.classList.add('scrolled'); else header.classList.remove('scrolled');
       last = y;
     }, { passive: true });
   }
 
   // ---------- Year in footer ----------
   document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+
+  // ---------- Scroll progress hairline ----------
+  if (!reduced) {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+    let ticking = false;
+    const draw = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+      ticking = false;
+    };
+    const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(draw); } };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue, { passive: true });
+    draw();
+  }
 
   // ---------- Cinematic hero rotation ----------
   const cinema = document.querySelector('.hero-cinema');
@@ -266,7 +296,23 @@
     });
 
     const DUR = s => (s.querySelector('video') ? 10000 : 7000);
-    let idx = 0, timer = null;
+    let idx = 0, timer = null, userPaused = false;
+
+    // Visible pause/resume control (WCAG 2.2.2 Pause, Stop, Hide)
+    const pauseBtn = document.createElement('button');
+    pauseBtn.type = 'button';
+    pauseBtn.className = 'hc-pause';
+    pauseBtn.setAttribute('aria-label', 'Pause slideshow');
+    pauseBtn.setAttribute('aria-pressed', 'false');
+    pauseBtn.innerHTML = '&#10074;&#10074;';
+    progress.insertBefore(pauseBtn, progress.firstChild);
+    pauseBtn.addEventListener('click', () => {
+      userPaused = !userPaused;
+      pauseBtn.setAttribute('aria-pressed', String(userPaused));
+      pauseBtn.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
+      pauseBtn.innerHTML = userPaused ? '&#9654;' : '&#10074;&#10074;';
+      if (userPaused) { clearTimeout(timer); stopVideos(); } else { show(idx); }
+    });
 
     const stopVideos = () => slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
 
@@ -277,7 +323,7 @@
       stopVideos();
       const s = slides[idx];
       const v = s.querySelector('video');
-      if (v && !reduced) { try { v.currentTime = 0; } catch (e) {} v.play().catch(() => {}); }
+      if (v && !reduced && !userPaused) { try { v.currentTime = 0; } catch (e) {} v.play().catch(() => {}); }
       cinema.style.setProperty('--hc-dur', DUR(s) + 'ms');
       // warm up the next slide's video one step ahead
       const nv = slides[(idx + 1) % slides.length].querySelector('video');
@@ -287,7 +333,7 @@
 
     function schedule() {
       clearTimeout(timer);
-      if (reduced || slides.length < 2) return;
+      if (reduced || userPaused || slides.length < 2) return;
       timer = setTimeout(() => {
         // never advance INTO a video that has no data yet — skip past it this round
         let next = (idx + 1) % slides.length;

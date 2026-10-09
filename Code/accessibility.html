@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://jlearthworks.com/accessibility.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
@@ -69,11 +69,16 @@
     <nav aria-label="Mobile menu">
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">&mdash; Site Development</a>
-      <a href="/services/underground-utilities.html">&mdash; Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">&mdash; Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">&mdash; GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>      <a href="/safety.html">Safety</a>
       <a href="/careers.html">Careers</a>
@@ -84,7 +89,7 @@
     </div>
   </div>
   <main id="main">
-    <section class="hero hero-page" data-bg="faq" aria-label="Page hero">
+    <section class="hero hero-page" data-bg="accessibility" aria-label="Page hero">
       <div class="bg-layer" role="presentation"></div>
       <div class="container">
         <span class="eyebrow">Accessibility</span>
@@ -120,6 +125,8 @@
           <li>Some hero photographs are decorative and are marked accordingly. Functional photographs include descriptive alt text.</li>
           <li>Third-party content (such as embedded fonts) is governed by third-party accessibility practices.</li>
           <li>Older PDF documents linked from this site, if any, may not be fully tagged for screen readers; please contact us for an accessible version.</li>
+          <li>The home page features an auto-rotating image and muted-video banner. It includes an on-page pause control, and it does not rotate or autoplay for visitors with the reduced-motion system setting enabled.</li>
+          <li>The contact page embeds a Google Map; the embedded map&rsquo;s accessibility is governed by Google&rsquo;s practices. Our address and service area are also provided as plain text.</li>
         </ul>
 
         <h2>Feedback &amp; Assistance</h2>
@@ -148,7 +155,7 @@
         <p>This website is designed to work with current versions of major browsers (Chrome, Firefox, Safari, Edge) on desktop and mobile devices. Older browsers may not display all features as intended.</p>
 
         <h2>Formal Statement</h2>
-        <p>This Accessibility Statement was last reviewed and updated in May 2026. It applies to <strong>jlearthworks.com</strong> and is reviewed periodically.</p>
+        <p>This Accessibility Statement was last reviewed and updated in October 2026. It applies to <strong>jlearthworks.com</strong> and is reviewed periodically.</p>
       </div>
     </section>
   </main>
@@ -198,7 +205,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>

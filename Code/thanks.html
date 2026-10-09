@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://jlearthworks.com/thanks.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
@@ -69,11 +69,16 @@
     <nav>
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">&mdash; Site Development</a>
-      <a href="/services/underground-utilities.html">&mdash; Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">&mdash; Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">&mdash; GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>      <a href="/safety.html">Safety</a>
       <a href="/careers.html">Careers</a>
@@ -84,12 +89,12 @@
     </div>
   </div>
   <main id="main">
-    <section class="hero hero-page" data-bg="contact" style="min-height: 70vh;">
+    <section class="hero hero-page" data-bg="thanks" style="min-height: 70vh;">
       <div class="bg-layer"></div>
       <div class="container">
         <span class="eyebrow">Inquiry Received</span>
         <h1>Thank you &mdash; we got your message.</h1>
-        <p class="lead">Your inquiry has been submitted. A member of our team will review it and follow up within one business day. If it&rsquo;s urgent, call us at <a href="tel:+19189380608" style="color:inherit;">(918)&nbsp;938-0608</a>.</p>
+        <p class="lead">Your inquiry has been submitted. A member of our team will review it and follow up typically within one business day. If it&rsquo;s urgent, call us at <a href="tel:+19189380608" style="color:inherit;">(918)&nbsp;938-0608</a>.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="/">Back to Home <span class="arrow">&rarr;</span></a>
           <a class="btn btn-outline-light" href="/projects.html">See Our Work</a>
@@ -143,7 +148,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>

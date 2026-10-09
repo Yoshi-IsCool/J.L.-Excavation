@@ -22,7 +22,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
   <script type="application/ld+json">
@@ -109,11 +109,16 @@
     <nav>
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">— Site Development</a>
-      <a href="/services/underground-utilities.html">— Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">— Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">— GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>
       <a href="/safety.html">Safety</a>
@@ -144,16 +149,16 @@
             <source src="/assets/video/hero-crew-2.mp4" type="video/mp4"/>
           </video>
         </div>
-        <div class="hc-slide" data-kb="drift">
+        <div class="hc-slide" data-kb="drift" data-focus="left">
           <img src="/assets/img/hero-slides/slide-precast-lift.jpg" alt="" loading="lazy"/>
         </div>
-        <div class="hc-slide" data-kb="out">
+        <div class="hc-slide" data-kb="out" data-focus="right">
           <img src="/assets/img/hero-slides/slide-cat336-reach.jpg" alt="" loading="lazy"/>
         </div>
       </div>
       <div class="hc-scrim" aria-hidden="true"></div>
       <div class="container reveal-stagger">
-        <h1 class="hero-motto"><span class="line">Built on Integrity,</span><br/><span class="line">Building with Excellence.</span></h1>
+        <h1 class="hero-motto mask-lines"><span class="line"><span class="line-inner">Built on Integrity,</span></span><span class="line"><span class="line-inner">Building with Excellence.</span></span></h1>
         <p class="lead">Oklahoma heavy civil construction &mdash; earthwork, utilities, and GPS-guided precision.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="/contact.html">Request Consultation <span class="arrow" aria-hidden="true">→</span></a>
@@ -212,7 +217,7 @@
           </div>
           <div class="body reveal">
             <span class="eyebrow">About</span>
-            <h2>An established earthwork company — roots in New York, future in Oklahoma.</h2>
+            <h2 class="mask-lines"><span class="line"><span class="line-inner">An established earthwork company — roots in New York, future in Oklahoma.</span></span></h2>
             <p class="lead">Jesse and Kristi Linstruth bring 35+ years of combined earthwork and operations experience. After building JL Excavation LLC in upstate New York, the owners reestablished the company in Oklahoma in 2024 as JL Earthworks &amp; Design LLC.</p>
             <p>Site preparation, underground utilities, and GPS modeling &mdash; for state, municipal, and commercial clients across Northeastern Oklahoma.</p>
             <a class="btn btn-outline" href="/about.html">Our Story <span class="arrow">→</span></a>
@@ -221,16 +226,28 @@
       </div>
     </section>
 
+    <!-- ===== BY THE NUMBERS ===== -->
+    <section class="tight">
+      <div class="container">
+        <div class="stats-row reveal-stagger">
+          <div class="stat-card"><div class="stat-num"><span data-count="35" data-suffix="+">35+</span></div><div class="stat-lbl">Years combined industry experience</div></div>
+          <div class="stat-card"><div class="stat-num"><span data-count="2" data-prefix="&plusmn;" data-suffix="&nbsp;mm">&plusmn;2&nbsp;mm</span></div><div class="stat-lbl">GPS machine-control tolerance, as tight as</div></div>
+          <div class="stat-card"><div class="stat-num"><span data-count="20" data-suffix="+">20+</span></div><div class="stat-lbl">Public &amp; commercial case studies</div></div>
+          <div class="stat-card"><div class="stat-num">2005</div><div class="stat-lbl">Heritage &mdash; founded in New York</div></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== SERVICES ===== -->
     <section class="bg-panel services-section">
       <div class="container">
         <div class="services-head">
-          <h2 class="services-title">Services</h2>
+          <h2 class="services-title mask-lines"><span class="line"><span class="line-inner">Services</span></span></h2>
           <p class="lead services-lead">Backed by more than 35 years of combined experience, our team delivers civil earthwork, underground utility construction, and machine-control precision under one roof.</p>
         </div>
         <div class="svc-grid-3 reveal-stagger">
           <a href="/services/site-development.html" class="svc-cell">
-            <div class="svc-cell-photo"><img src="/assets/img/projects/carthage-high-school-p-lot-2017/carthage-high-school-p-lot-2017-card.jpg" alt="Site development at a school campus parking lot" loading="lazy"/></div>
+            <div class="svc-cell-photo"><img src="/assets/img/sections/services-feature.jpg" alt="CAT 336 excavator cutting a drainage channel during site development" loading="lazy"/></div>
             <div class="svc-cell-body">
               <span class="svc-cell-num">01</span>
               <h3>Site Development</h3>
@@ -240,7 +257,7 @@
           </a>
 
           <a href="/services/underground-utilities.html" class="svc-cell">
-            <div class="svc-cell-photo"><img src="/assets/img/projects/tigris-rd-fort-drum-ny-2017/tigris-rd-fort-drum-ny-2017-card.jpg" alt="Underground utility trench with shoring" loading="lazy"/></div>
+            <div class="svc-cell-photo"><img src="/assets/img/projects/waterline-fort-drum-ny-2016/waterline-fort-drum-ny-2016-card.jpg" alt="Winter waterline trench running past an occupied facility" loading="lazy"/></div>
             <div class="svc-cell-body">
               <span class="svc-cell-num">02</span>
               <h3>Underground Utilities</h3>
@@ -250,7 +267,7 @@
           </a>
 
           <a href="/services/sewer-and-water.html" class="svc-cell">
-            <div class="svc-cell-photo"><img src="/assets/img/projects/lowville-waste-water-treatment-plant-2023/lowville-waste-water-treatment-plant-2023-card.jpg" alt="Municipal sewer and water main work at a treatment plant" loading="lazy"/></div>
+            <div class="svc-cell-photo"><img src="/assets/img/sections/sewer-feature.jpg" alt="Geomembrane-lined lagoon with new piping at a wastewater treatment plant" loading="lazy"/></div>
             <div class="svc-cell-body">
               <span class="svc-cell-num">03</span>
               <h3>Sewer &amp; Water Main</h3>
@@ -260,7 +277,7 @@
           </a>
 
           <a href="/services/gps-design.html" class="svc-cell">
-            <div class="svc-cell-photo"><img src="/assets/img/tech/trimble/Sitech4.jpg" alt="GPS machine control system" loading="lazy"/></div>
+            <div class="svc-cell-photo"><img src="/assets/img/hero-slides/slide-cat336-pad.jpg" alt="GPS-equipped CAT 336 fine-grading a pad with machine control" loading="lazy"/></div>
             <div class="svc-cell-body">
               <span class="svc-cell-num">04</span>
               <h3>GPS Modeling</h3>
@@ -270,7 +287,7 @@
           </a>
 
           <a href="/technology.html" class="svc-cell">
-            <div class="svc-cell-photo"><img src="/assets/img/tech/trimble/Trimble1.jpg" alt="Trimble machine control platform in operation" loading="lazy"/></div>
+            <div class="svc-cell-photo"><img src="/assets/img/tech/own/own-fleet.jpg" alt="Compaction fleet working under GPS machine control at Catoosa" loading="lazy"/></div>
             <div class="svc-cell-body">
               <span class="svc-cell-num">05</span>
               <h3>Technology</h3>
@@ -315,13 +332,13 @@
         <div class="section-head flex-between" style="flex-wrap:wrap;">
           <div>
             <span class="eyebrow">Oklahoma</span>
-            <h2>Featured Projects</h2>
+            <h2 class="mask-lines"><span class="line"><span class="line-inner">Featured Projects</span></span></h2>
           </div>
           <a class="btn btn-outline" href="/projects.html">All Projects <span class="arrow">→</span></a>
         </div>
         <div class="proj-grid reveal-stagger">
           <a class="proj-card" href="/projects.html#catoosa-cdc">
-            <img src="/assets/img/projects/catoosa-child-development-center/catoosa-child-development-center-card.jpg" alt="Aerial of Catoosa Child Development Center sitework" loading="lazy"/>
+            <img src="/assets/img/projects/catoosa-child-development-center/catoosa-child-development-center-feature.jpg" alt="Compaction fleet building pad fill at Catoosa Child Development Center" loading="lazy"/>
             <span class="tag">Site Development</span>
             <div class="meta">
               <h4>Catoosa Child Development Center</h4>
@@ -330,7 +347,7 @@
             </div>
           </a>
           <a class="proj-card" href="/projects.html#collinsville">
-            <img src="/assets/img/projects/collinsville-5th-grade/collinsville-5th-grade-card.jpg" alt="Aerial of Collinsville 5th Grade Center construction" loading="lazy"/>
+            <img src="/assets/img/projects/collinsville-5th-grade/collinsville-5th-grade-feature.jpg" alt="Aerial of Collinsville 5th Grade Center with buildings taking shape" loading="lazy"/>
             <span class="tag">School &amp; Civil</span>
             <div class="meta">
               <h4>Collinsville 5th Grade Center</h4>
@@ -339,7 +356,7 @@
             </div>
           </a>
           <a class="proj-card" href="/projects.html#victory-park">
-            <img src="/assets/img/projects/victory-park/victory-park-card.png" alt="Victory Park 3D finished-grade machine-control model" loading="lazy"/>
+            <img src="/assets/img/projects/victory-park/victory-park-card.png" alt="Victory Park civil design surface map" loading="lazy"/>
             <span class="tag">GPS &amp; Design-Build</span>
             <div class="meta">
               <h4>Victory Park</h4>
@@ -410,7 +427,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
 

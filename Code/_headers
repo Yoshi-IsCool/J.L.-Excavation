@@ -1,10 +1,10 @@
 /*
   # ---- HTTPS / transport security ----
-  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
 
   # ---- Anti-framing / clickjacking ----
   X-Frame-Options: DENY
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-src https://www.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-src https://www.google.com/maps; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
 
   # ---- MIME sniffing protection ----
   X-Content-Type-Options: nosniff
@@ -29,6 +29,3 @@
 /assets/*
   Cache-Control: public, max-age=0, must-revalidate
 
-# ---- HTML: short cache, must revalidate ----
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate

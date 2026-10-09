@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://jlearthworks.com/services.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   
 </head>
@@ -69,11 +69,16 @@
     <nav>
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/services/site-development.html">&mdash; Site Development</a>
-      <a href="/services/underground-utilities.html">&mdash; Underground Utilities</a>
-      <a href="/services/sewer-and-water.html">&mdash; Sewer &amp; Water</a>
-      <a href="/services/gps-design.html">&mdash; GPS Modeling</a>
+      <div class="mm-group">
+        <button class="mm-sub-toggle" type="button" aria-expanded="false" aria-controls="mm-services">Services<span class="mm-chev" aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mm-services">
+          <a href="/services.html">All Services</a>
+          <a href="/services/site-development.html">Site Development</a>
+          <a href="/services/underground-utilities.html">Underground Utilities</a>
+          <a href="/services/sewer-and-water.html">Sewer &amp; Water</a>
+          <a href="/services/gps-design.html">GPS Modeling</a>
+        </div>
+      </div>
       <a href="/technology.html">Technology</a>
       <a href="/projects.html">Projects</a>      <a href="/safety.html">Safety</a>
       <a href="/careers.html">Careers</a>
@@ -102,7 +107,7 @@
         </div>
         <div class="svc-grid reveal-stagger">
           <a href="/services/site-development.html" class="svc-card photo">
-            <div class="photo-wrap"><img src="/assets/img/projects/carthage-high-school-p-lot-2017/carthage-high-school-p-lot-2017-card.jpg" alt="Site development &amp; paving" loading="lazy"/></div>
+            <div class="photo-wrap"><img src="/assets/img/projects/catoosa-child-development-center/catoosa-child-development-center-finegrade.jpg" alt="Aerial of a fine-graded building pad ready for stone" loading="lazy"/></div>
             <div class="body">
               <h3>Site Development</h3>
               <p>Clearing, demolition, mass excavation, rock excavation, mass and fine grading, structural fill, and final site prep.</p>
@@ -110,7 +115,7 @@
             </div>
           </a>
           <a href="/services/underground-utilities.html" class="svc-card photo">
-            <div class="photo-wrap"><img src="/assets/img/projects/tigris-rd-fort-drum-ny-2017/tigris-rd-fort-drum-ny-2017-card.jpg" alt="Underground utility trenching" loading="lazy"/></div>
+            <div class="photo-wrap"><img src="/assets/img/projects/tupper-lake-rd-2022/tupper-lake-rd-2022-card.jpg" alt="Excavator opening a residential street for new utilities" loading="lazy"/></div>
             <div class="body">
               <h3>Underground Utilities</h3>
               <p>Trenching, structures, service connections, and box culverts &mdash; properly bedded, compacted, and documented.</p>
@@ -118,7 +123,7 @@
             </div>
           </a>
           <a href="/services/sewer-and-water.html" class="svc-card photo">
-            <div class="photo-wrap"><img src="/assets/img/projects/lowville-waste-water-treatment-plant-2023/lowville-waste-water-treatment-plant-2023-card.jpg" alt="Sewer &amp; water main" loading="lazy"/></div>
+            <div class="photo-wrap"><img src="/assets/img/projects/tigris-rd-fort-drum-ny-2017/tigris-rd-fort-drum-ny-2017-structures.jpg" alt="New sanitary and storm structures set ahead of final paving" loading="lazy"/></div>
             <div class="body">
               <h3>Sewer &amp; Water Main</h3>
               <p>Municipal water mains, sanitary sewer, manholes, services, and stormwater drainage &mdash; to engineering spec.</p>
@@ -138,7 +143,7 @@
         </div>
         <div class="svc-grid reveal-stagger">
           <a href="/services/gps-design.html" class="svc-card photo">
-            <div class="photo-wrap"><img src="/assets/img/tech/trimble/Sitech4.jpg" alt="GPS modeling for machine control" loading="lazy"/></div>
+            <div class="photo-wrap"><img src="/assets/img/tech/own/own-grading-pad.jpg" alt="Fine-graded building pad cut to the 3D model" loading="lazy"/></div>
             <div class="body">
               <h3>GPS Modeling</h3>
               <p>3D machine-control models built from your engineering plans &mdash; ready to load into the dozer, grader, or excavator. Revisions handled efficiently as your project evolves.</p>
@@ -146,7 +151,7 @@
             </div>
           </a>
           <a href="/technology.html" class="svc-card photo">
-            <div class="photo-wrap"><img src="/assets/img/tech/trimble/Trimble1.jpg" alt="Trimble&reg; technology" loading="lazy"/></div>
+            <div class="photo-wrap"><img src="/assets/img/tech/own/own-pad-fill.jpg" alt="Pad fill placed and compacted to specification" loading="lazy"/></div>
             <div class="body">
               <h3>Our Technology</h3>
               <p>Trimble&reg; and Topcon&reg; are our machine-control platforms. Real-time data, model-based workflows, and tolerances as tight as 2&nbsp;mm on the jobsite.</p>
@@ -249,7 +254,7 @@
       </div>
     </div>
     <div class="foot-bottom" style="margin-top: 0; padding-top: 0; border-top: 0; color: rgba(255,255,255,0.35); font-size:12px;">
-      <div>Trimble&reg; and Topcon&reg; are registered trademarks of their respective owners. References on this site are for product identification purposes only and do not imply endorsement or affiliation.</div>
+      <div>Trimble&reg;, Topcon&reg;, Cat&reg;, and SITECH&reg; are registered trademarks of their respective owners, including Trimble Inc., Topcon Corporation, and Caterpillar Inc. References to these marks identify the equipment and technology platforms we use and do not imply endorsement, sponsorship, or affiliation.</div>
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>

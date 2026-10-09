@@ -126,32 +126,79 @@
   </div>
 
   <main id="main">
-    <!-- ===== HERO (motto only) ===== -->
-    <section class="hero" data-bg="home" aria-label="Hero">
-      <div class="bg-layer"></div>
+    <!-- ===== CINEMATIC HERO (rotating video + stills) ===== -->
+    <section class="hero hero-cinema" aria-label="Hero">
+      <div class="hc-stage" aria-hidden="true">
+        <div class="hc-slide is-active">
+          <video muted playsinline loop preload="none" poster="/assets/img/hero-slides/slide-cat340-aerial.jpg">
+            <source src="/assets/video/hero-drone.mp4" type="video/mp4"/>
+          </video>
+        </div>
+        <div class="hc-slide" data-kb="in">
+          <img src="/assets/img/hero-slides/slide-cat336-sky.jpg" alt="" loading="lazy"/>
+        </div>
+        <div class="hc-slide">
+          <video muted playsinline loop preload="none">
+            <source src="/assets/video/hero-crew-3.mp4" type="video/mp4"/>
+          </video>
+        </div>
+        <div class="hc-slide" data-kb="drift">
+          <img src="/assets/img/hero-slides/slide-precast-lift.jpg" alt="" loading="lazy"/>
+        </div>
+        <div class="hc-slide">
+          <video muted playsinline loop preload="none">
+            <source src="/assets/video/hero-crew-2.mp4" type="video/mp4"/>
+          </video>
+        </div>
+        <div class="hc-slide" data-kb="out">
+          <img src="/assets/img/hero-slides/slide-cat336-reach.jpg" alt="" loading="lazy"/>
+        </div>
+      </div>
+      <div class="hc-scrim" aria-hidden="true"></div>
       <div class="container reveal-stagger">
         <h1 class="hero-motto"><span class="line">Built on Integrity,</span><br/><span class="line">Building with Excellence.</span></h1>
+        <p class="lead">Oklahoma heavy civil construction &mdash; earthwork, utilities, and GPS-guided precision.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="/contact.html">Request Consultation <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn btn-outline-light" href="/projects.html">View Our Work</a>
         </div>
       </div>
+      <div class="hc-progress" role="group" aria-label="Hero slides"></div>
+      <a class="hc-cue" href="#two-arms" aria-hidden="true" tabindex="-1">Scroll<span class="stick"></span></a>
     </section>
 
+    <!-- ===== CAPABILITY MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Site Development</span><span class="dot-sep">&bull;</span>
+        <span>Underground Utilities</span><span class="dot-sep">&bull;</span>
+        <span>Municipal Infrastructure</span><span class="dot-sep">&bull;</span>
+        <span>GPS Machine Control</span><span class="dot-sep">&bull;</span>
+        <span>3D Modeling</span><span class="dot-sep">&bull;</span>
+        <span>Commercial Earthwork</span><span class="dot-sep">&bull;</span>
+        <span>Site Development</span><span class="dot-sep">&bull;</span>
+        <span>Underground Utilities</span><span class="dot-sep">&bull;</span>
+        <span>Municipal Infrastructure</span><span class="dot-sep">&bull;</span>
+        <span>GPS Machine Control</span><span class="dot-sep">&bull;</span>
+        <span>3D Modeling</span><span class="dot-sep">&bull;</span>
+        <span>Commercial Earthwork</span><span class="dot-sep">&bull;</span>
+      </div>
+    </div>
+
     <!-- ===== TWO-ARM TILES ===== -->
-    <section class="snug">
+    <section class="snug" id="two-arms">
       <div class="container">
         <div class="scan-tiles reveal">
           <div class="scan-tile">
             <span class="tag">01 / Sitework &amp; Utility</span>
-            <h3>Civil Earthwork &amp; Underground Utilities</h3>
-            <p>Comprehensive site preparation, mass and fine grading, water mains, sanitary sewer, stormwater, and complete site development for commercial and municipal clients.</p>
+            <h3>Civil Construction &amp; Underground Utilities</h3>
+            <p>Site preparation, grading, water, sewer, and storm &mdash; complete site development for commercial and municipal clients.</p>
             <a class="more" href="/services.html">Explore the work</a>
           </div>
           <div class="scan-tile">
             <span class="tag">02 / GPS Modeling</span>
             <h3>Machine-Control Models &amp; Innovation</h3>
-            <p>Trimble&reg; model-based workflows — designed to make your equipment more productive through 3D models built from your engineering plans.</p>
+            <p>Trimble&reg; &amp; Topcon&reg; model-based workflows &mdash; 3D machine-control models built straight from your engineering plans.</p>
             <a class="more" href="/services/gps-design.html">See how it works</a>
           </div>
         </div>
@@ -168,9 +215,9 @@
           </div>
           <div class="body reveal">
             <span class="eyebrow">About</span>
-            <h2>An established earthwork firm — roots in New York, future in Oklahoma.</h2>
-            <p class="lead">Jesse and Kristi Linstruth bring more than 35 years of combined earthwork and operations experience to every engagement. After thirteen years building JL Excavation LLC in upstate New York, the principals relocated to the Tulsa area and established JL Earthworks &amp; Design LLC in Oklahoma in July 2023.</p>
-            <p>Today the firm serves Northeastern Oklahoma with comprehensive site preparation, underground utility construction, and GPS modeling services for state, municipal, and commercial clients.</p>
+            <h2>An established earthwork company — roots in New York, future in Oklahoma.</h2>
+            <p class="lead">Jesse and Kristi Linstruth bring 35+ years of combined earthwork and operations experience. After building JL Excavation LLC in upstate New York, the owners reestablished the company in Oklahoma in 2024 as JL Earthworks &amp; Design LLC.</p>
+            <p>Site preparation, underground utilities, and GPS modeling &mdash; for state, municipal, and commercial clients across Northeastern Oklahoma.</p>
             <a class="btn btn-outline" href="/about.html">Our Story <span class="arrow">→</span></a>
           </div>
         </div>
@@ -200,7 +247,7 @@
             <div class="svc-cell-body">
               <span class="svc-cell-num">02</span>
               <h3>Underground Utilities</h3>
-              <p>Trenching, conduit, structures, and connections &mdash; properly bedded, compacted, and documented.</p>
+              <p>Trenching, structures, and connections &mdash; properly bedded, compacted, and documented.</p>
               <span class="svc-cell-more">Learn more <span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
@@ -230,7 +277,7 @@
             <div class="svc-cell-body">
               <span class="svc-cell-num">05</span>
               <h3>Technology</h3>
-              <p>Built on Trimble&reg; &mdash; model-based workflows and 2&nbsp;mm tolerances. Innovation that drives our equipment.</p>
+              <p>Built on Trimble&reg; &amp; Topcon&reg; &mdash; model-based workflows and 2&nbsp;mm tolerances. Innovation that drives our equipment.</p>
               <span class="svc-cell-more">Learn more <span aria-hidden="true">&rarr;</span></span>
             </div>
           </a>
@@ -270,8 +317,8 @@
       <div class="container">
         <div class="section-head flex-between" style="flex-wrap:wrap;">
           <div>
-            <span class="eyebrow">Selected Projects</span>
-            <h2>Work we&rsquo;re proud of.</h2>
+            <span class="eyebrow">Oklahoma</span>
+            <h2>Featured Projects</h2>
           </div>
           <a class="btn btn-outline" href="/projects.html">All Projects <span class="arrow">→</span></a>
         </div>
@@ -294,12 +341,12 @@
               <span class="underline">Case Study</span>
             </div>
           </a>
-          <a class="proj-card" href="/projects.html#lowville-wwtp">
-            <img src="/assets/img/projects/lowville-waste-water-treatment-plant-2023/lowville-waste-water-treatment-plant-2023-card.jpg" alt="Municipal waste water treatment plant work" loading="lazy"/>
-            <span class="tag">Sewer &amp; Water</span>
+          <a class="proj-card" href="/projects.html#victory-park">
+            <img src="/assets/img/projects/victory-park/victory-park-card.png" alt="Victory Park 3D finished-grade machine-control model" loading="lazy"/>
+            <span class="tag">GPS &amp; Design-Build</span>
             <div class="meta">
-              <h4>Waste Water Treatment Plant</h4>
-              <div class="caption">Lowville, NY · 2023</div>
+              <h4>Victory Park</h4>
+              <div class="caption">Tulsa, OK · 2026</div>
               <span class="underline">Case Study</span>
             </div>
           </a>
@@ -352,7 +399,7 @@
           <li><a href="tel:+19189380608">(918) 938-0608</a></li>
           <li><a href="mailto:info@jlearthworks.com">info@jlearthworks.com</a></li>
           <li>494 E 141st St, Glenpool, OK 74033</li>
-          <li>Mon&ndash;Fri &middot; 7:00 AM &ndash; 5:00 PM CT</li>
+          <li>Mon&ndash;Fri &middot; 8:00 AM &ndash; 4:30 PM CT</li>
         </ul>
         <p style="margin-top:18px;"><a class="btn btn-primary btn-sm" href="/contact.html">Request Consultation <span class="arrow" aria-hidden="true">&rarr;</span></a></p>
       </div>

@@ -92,21 +92,75 @@
     });
   });
 
-  // ---------- Project filter (chips) ----------
+  // ---------- Project region tabs + category filter ----------
+  const projTabs = document.querySelectorAll('.proj-tab');
   const filterChips = document.querySelectorAll('[data-filter]');
   const projectItems = document.querySelectorAll('[data-cat]');
-  if (filterChips.length && projectItems.length) {
-    filterChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        filterChips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const f = chip.dataset.filter;
-        projectItems.forEach(item => {
-          const cats = (item.dataset.cat || '').split(/\s+/);
-          item.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
-        });
-      });
+  if (projectItems.length && filterChips.length) {
+    let region = 'ok';
+    let cat = 'all';
+    const groups = { ok: document.getElementById('tulsa-projects'), ny: document.getElementById('ny-projects') };
+    const syncChips = () => filterChips.forEach(c => {
+      const on = c.dataset.filter === cat;
+      c.classList.toggle('btn-primary', on);
+      c.classList.toggle('btn-outline', !on);
+      c.style.background = on ? 'var(--yellow)' : '';
     });
+    let noteEl = null;
+    const apply = () => {
+      projectItems.forEach(item => {
+        const cats = (item.dataset.cat || '').split(/\s+/);
+        item.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+      });
+      let anyActive = true;
+      Object.keys(groups).forEach(key => {
+        const g = groups[key];
+        if (!g) return;
+        const any = Array.from(g.querySelectorAll('[data-cat]')).some(i => i.style.display !== 'none');
+        g.style.display = (key === region && any) ? '' : 'none';
+        if (key === region) anyActive = any;
+      });
+      const host = groups.ok || groups.ny;
+      if (host && !noteEl) {
+        noteEl = document.createElement('p');
+        noteEl.textContent = 'No projects in this category here yet.';
+        noteEl.style.cssText = 'color:var(--steel);padding:26px 0;display:none;';
+        host.parentNode.appendChild(noteEl);
+      }
+      if (noteEl) noteEl.style.display = anyActive ? 'none' : '';
+      document.querySelectorAll('[data-region]').forEach(s => {
+        s.style.display = (s.dataset.region === region) ? '' : 'none';
+      });
+      projTabs.forEach(tb => {
+        const on = tb.dataset.tab === region;
+        tb.classList.toggle('is-active', on);
+        tb.setAttribute('aria-selected', String(on));
+      });
+      syncChips();
+    };
+    projTabs.forEach(tb => tb.addEventListener('click', () => { region = tb.dataset.tab; cat = 'all'; apply(); }));
+    filterChips.forEach(chip => chip.addEventListener('click', () => { cat = chip.dataset.filter; apply(); }));
+    if (projTabs.length) {
+      const hash = location.hash.slice(1);
+      const target0 = hash ? document.getElementById(hash) : null;
+      if (target0 && (target0.closest('[data-region="ny"]') || (groups.ny && groups.ny.contains(target0)))) {
+        region = 'ny';
+      }
+      apply();
+      if (hash) {
+        const target = document.getElementById(hash);
+        if (target) {
+          const jump = () => {
+            const y = target.getBoundingClientRect().top + window.scrollY - 84;
+            document.documentElement.scrollTop = y;
+          };
+          jump();
+          // re-align after images above settle the layout
+          setTimeout(jump, 300);
+          window.addEventListener('load', () => setTimeout(jump, 60), { once: true });
+        }
+      }
+    }
   }
 
   // ---------- Upload zone ----------
@@ -187,4 +241,84 @@
 
   // ---------- Year in footer ----------
   document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+
+  // ---------- Cinematic hero rotation ----------
+  const cinema = document.querySelector('.hero-cinema');
+  if (cinema) {
+    const lowData = (navigator.connection && navigator.connection.saveData) ||
+                    window.matchMedia('(max-width: 760px)').matches;
+    let slides = Array.from(cinema.querySelectorAll('.hc-slide'));
+    const progress = cinema.querySelector('.hc-progress');
+
+    // On phones / data-saver: photos only — remove video slides before they load anything
+    if (lowData) {
+      slides.filter(s => s.querySelector('video')).forEach(s => s.remove());
+      slides = Array.from(cinema.querySelectorAll('.hc-slide'));
+    }
+
+    // Build one progress bar per remaining slide
+    const bars = slides.map((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Show slide ' + (i + 1));
+      progress.appendChild(b);
+      return b;
+    });
+
+    const DUR = s => (s.querySelector('video') ? 10000 : 7000);
+    let idx = 0, timer = null;
+
+    const stopVideos = () => slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('is-active', k === idx));
+      bars.forEach((b, k) => b.classList.toggle('is-active', k === idx));
+      stopVideos();
+      const s = slides[idx];
+      const v = s.querySelector('video');
+      if (v && !reduced) { try { v.currentTime = 0; } catch (e) {} v.play().catch(() => {}); }
+      cinema.style.setProperty('--hc-dur', DUR(s) + 'ms');
+      // warm up the next slide's video one step ahead
+      const nv = slides[(idx + 1) % slides.length].querySelector('video');
+      if (nv && nv.preload !== 'auto') { nv.preload = 'auto'; nv.load(); }
+      schedule();
+    }
+
+    function schedule() {
+      clearTimeout(timer);
+      if (reduced || slides.length < 2) return;
+      timer = setTimeout(() => {
+        // never advance INTO a video that has no data yet — skip past it this round
+        let next = (idx + 1) % slides.length;
+        const v = slides[next].querySelector('video');
+        if (v && v.readyState < 2) next = (next + 1) % slides.length;
+        show(next);
+      }, DUR(slides[idx]));
+    }
+
+    bars.forEach((b, k) => b.addEventListener('click', () => show(k)));
+
+    // Pause everything while the tab is hidden or hero is scrolled away
+    let inView = true;
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { clearTimeout(timer); stopVideos(); } else if (inView) { show(idx); }
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          inView = e.isIntersecting;
+          if (inView) { show(idx); } else { clearTimeout(timer); stopVideos(); }
+        });
+      }, { threshold: 0.05 }).observe(cinema);
+    }
+
+    // Full-experience visitors: start buffering the first video right away
+    if (!lowData) {
+      const v0 = slides[0] && slides[0].querySelector('video');
+      if (v0) { v0.preload = 'auto'; v0.load(); }
+    }
+
+    show(0);
+  }
 })();

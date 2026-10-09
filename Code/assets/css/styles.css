@@ -587,7 +587,7 @@ section.snug { padding: var(--section-pad-sm) 0; }
 @media (max-width: 960px) { .proj-grid { gap: 14px; } .proj-grid > * { flex-basis: calc(50% - 8px); } }
 @media (max-width: 600px) { .proj-grid > * { flex-basis: 100%; min-width: 0; } }
 
-/* Project index groups (Tulsa Area / New York) */
+/* Project index groups (Oklahoma / New York) */
 .proj-group + .proj-group { margin-top: 48px; }
 .proj-group-head {
   display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px;
@@ -1266,3 +1266,119 @@ ul.checks.light li { color: var(--white); }
   .svc-row .svc-photo { width: 100%; height: 180px; }
 }
 
+/* ==================== CINEMATIC HERO (rotating video + stills) ==================== */
+.hero-cinema { min-height: 92vh; min-height: 92svh; }
+.hc-stage { position: absolute; inset: 0; z-index: -2; background: var(--ink); }
+.hc-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.3s ease; overflow: hidden; }
+.hc-slide.is-active { opacity: 1; }
+.hc-slide img, .hc-slide video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+/* Ken Burns motion on stills — only while the slide is active */
+@media (prefers-reduced-motion: no-preference) {
+  .hc-slide[data-kb="in"].is-active img    { animation: kb-in 9s linear forwards; }
+  .hc-slide[data-kb="out"].is-active img   { animation: kb-out 9s linear forwards; }
+  .hc-slide[data-kb="drift"].is-active img { animation: kb-drift 10s linear forwards; }
+}
+@keyframes kb-in    { from { transform: scale(1.0); }  to { transform: scale(1.09); } }
+@keyframes kb-out   { from { transform: scale(1.1); }  to { transform: scale(1.0); } }
+@keyframes kb-drift { from { transform: scale(1.07) translateX(-1.6%); } to { transform: scale(1.07) translateX(1.6%); } }
+.hc-scrim {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(26,26,26,0.52) 0%, rgba(26,26,26,0.30) 42%, rgba(26,26,26,0.92) 100%),
+    linear-gradient(90deg, rgba(26,26,26,0.55) 0%, rgba(26,26,26,0.08) 65%);
+}
+/* Slide progress bars */
+.hc-progress {
+  position: absolute; left: 0; bottom: 26px; z-index: 2;
+  display: flex; gap: 10px; padding: 0 var(--gutter);
+}
+.hc-progress button {
+  width: 54px; height: 4px; border-radius: 2px; border: 0; padding: 0;
+  background: rgba(255,255,255,0.30); overflow: hidden; position: relative; cursor: pointer;
+}
+.hc-progress button::after {
+  content: ""; position: absolute; inset: 0; background: var(--yellow);
+  transform: scaleX(0); transform-origin: left center;
+}
+.hc-progress button.is-active::after { animation: hc-fill var(--hc-dur, 7s) linear forwards; }
+.hc-progress button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+@keyframes hc-fill { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .hc-slide { transition: none; }
+  .hc-progress button.is-active::after { animation: none; transform: scaleX(1); }
+}
+/* Scroll cue */
+.hc-cue {
+  position: absolute; right: var(--gutter); bottom: 18px; z-index: 2;
+  color: rgba(255,255,255,0.75); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.hc-cue .stick { width: 1px; height: 34px; background: rgba(255,255,255,0.4); position: relative; overflow: hidden; }
+@media (prefers-reduced-motion: no-preference) {
+  .hc-cue .stick::after {
+    content: ""; position: absolute; left: 0; top: -40%; width: 100%; height: 40%;
+    background: var(--yellow); animation: cue-drop 1.8s ease-in-out infinite;
+  }
+}
+@keyframes cue-drop { 0% { top: -40%; } 70%, 100% { top: 110%; } }
+@media (max-width: 760px) { .hc-cue { display: none; } }
+
+/* ==================== MARQUEE CAPABILITY BAND ==================== */
+.marquee {
+  background: var(--ink); color: var(--white);
+  overflow: hidden; padding: 18px 0; border-bottom: 3px solid var(--yellow);
+}
+.marquee-track {
+  display: flex; gap: 56px; width: max-content; white-space: nowrap;
+  font-family: var(--font-display); font-size: 20px; letter-spacing: 0.06em;
+}
+.marquee-track .dot-sep { color: var(--yellow); }
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track { animation: marquee-roll 30s linear infinite; }
+}
+@keyframes marquee-roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ==================== INNER-PAGE HERO MOTION ==================== */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-page .bg-layer { animation: kb-page 16s ease-out forwards; }
+}
+@keyframes kb-page { from { transform: scale(1.07); } to { transform: scale(1.0); } }
+
+/* ==================== REVEAL SYSTEM UPGRADES ==================== */
+.reveal-stagger > * { transition-delay: 0ms; }
+.reveal-stagger.in > *:nth-child(2) { transition-delay: 90ms; }
+.reveal-stagger.in > *:nth-child(3) { transition-delay: 180ms; }
+.reveal-stagger.in > *:nth-child(4) { transition-delay: 270ms; }
+.reveal-stagger.in > *:nth-child(5) { transition-delay: 360ms; }
+.reveal-stagger.in > *:nth-child(6) { transition-delay: 450ms; }
+.img-frame, .proj-card, .svc-cell { will-change: transform; }
+.proj-card { transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.proj-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(26,26,26,0.22); }
+
+
+/* ==================== PROJECT REGION TABS ==================== */
+.proj-tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--rule); margin-bottom: 20px; }
+.proj-tab {
+  appearance: none; border: 0; background: none; cursor: pointer;
+  font-family: var(--font-display); font-size: clamp(20px, 2.6vw, 27px); letter-spacing: 0.01em;
+  color: var(--steel); padding: 10px 22px 14px; position: relative; margin-bottom: -2px;
+  transition: color .25s var(--ease);
+}
+.proj-tab:hover { color: var(--ink); }
+.proj-tab.is-active { color: var(--ink); }
+.proj-tab.is-active::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--yellow);
+}
+.proj-tab:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.tab-note { color: var(--steel); font-size: 14px; margin: 0 0 18px; }
+/* ==================== BRAND STRIP (technology) ==================== */
+.brand-strip {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px 28px;
+  padding: 22px var(--gutter); background: var(--ink); border-bottom: 3px solid var(--yellow);
+  font-family: var(--font-display); font-size: clamp(16px, 2.2vw, 22px); letter-spacing: 0.14em;
+  color: var(--white);
+}
+.brand-strip .dot-sep { color: var(--yellow); }

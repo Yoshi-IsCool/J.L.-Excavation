@@ -223,14 +223,14 @@ section.snug { padding: var(--section-pad-sm) 0; }
 }
 .bar-top {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  padding: 9px var(--gutter); max-width: var(--container); margin: 0 auto;
+  padding: 12px var(--gutter); max-width: var(--container); margin: 0 auto;
   color: var(--ink);
 }
 .bar-top .logo-wrap {
   display: flex; align-items: center; gap: 14px;
   flex: 0 0 auto;
 }
-.bar-top .logo-wrap img { height: 54px; width: auto; display: block; }
+.bar-top .logo-wrap img { height: 66px; width: auto; display: block; }
 .bar-top .right { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
 .phone-link {
   display: inline-flex; align-items: center; gap: 10px;

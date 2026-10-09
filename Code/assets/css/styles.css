@@ -1635,3 +1635,16 @@ html { scrollbar-color: var(--steel) var(--panel); scrollbar-width: thin; }
 }
 .hc-pause:hover { border-color: var(--yellow); background: rgba(26,26,26,0.6); }
 .hc-pause:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+
+/* ==================== LEADERSHIP PORTRAITS ==================== */
+.leader-photo {
+  width: min(240px, 62%);
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--yellow);
+  box-shadow: 0 14px 30px -18px rgba(26,26,26,0.35);
+}
+.leader-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 600px) { .leader-photo { width: min(220px, 70%); } }
